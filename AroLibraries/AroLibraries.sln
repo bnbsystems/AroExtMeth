@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AroLibraries.ExtensionMethods", "AroLibraries.ExtensionMethods\AroLibraries.ExtensionMethods.csproj", "{FF6F3AA4-DA70-436A-AB8B-060215146BB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample1", "Sample1\Sample1.csproj", "{D80CF1BF-6D76-4FD7-8705-8772058671E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF6F3AA4-DA70-436A-AB8B-060215146BB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF6F3AA4-DA70-436A-AB8B-060215146BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF6F3AA4-DA70-436A-AB8B-060215146BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF6F3AA4-DA70-436A-AB8B-060215146BB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80CF1BF-6D76-4FD7-8705-8772058671E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80CF1BF-6D76-4FD7-8705-8772058671E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80CF1BF-6D76-4FD7-8705-8772058671E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80CF1BF-6D76-4FD7-8705-8772058671E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
