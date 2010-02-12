@@ -1,0 +1,8 @@
+C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\bin\Debug\AroLibraries.ExtensionMethods.dll.config
+C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\bin\Debug\AroLibraries.ExtensionMethods.dll
+C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\bin\Debug\AroLibraries.ExtensionMethods.pdb
+C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\bin\Debug\AroLibraries.ExtensionMethods.dll.CodeAnalysisLog.xml
+C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\bin\Debug\AroLibraries.ExtensionMethods.dll.lastcodeanalysissucceeded
+C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.dll
+C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.pdb

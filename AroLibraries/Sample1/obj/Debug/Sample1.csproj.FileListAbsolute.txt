@@ -1,0 +1,7 @@
+C:\Projects\codeplex\AroLibraries\AroLibraries\Sample1\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\codeplex\AroLibraries\AroLibraries\Sample1\bin\Debug\Sample1.exe
+C:\Projects\codeplex\AroLibraries\AroLibraries\Sample1\bin\Debug\Sample1.pdb
+C:\Projects\codeplex\AroLibraries\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.dll
+C:\Projects\codeplex\AroLibraries\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.pdb
+C:\Projects\codeplex\AroLibraries\AroLibraries\Sample1\obj\Debug\Sample1.exe
+C:\Projects\codeplex\AroLibraries\AroLibraries\Sample1\obj\Debug\Sample1.pdb
