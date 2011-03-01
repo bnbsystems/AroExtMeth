@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -8,70 +9,7 @@ namespace AroLibraries.ExtensionMethods.Strings
 {
     public static class StringExt
     {
-        #region Valid
-        public static bool Ext_IsValidOneWord(this string iString)
-        {
-            if (!String.IsNullOrEmpty(iString))
-            {
-                string word = iString.Trim().ToLower();
-                if (!String.IsNullOrEmpty(word))
-                {
-                    foreach (char c in word)
-                    {
-                        if (char.IsLetter(c) == false)
-                        {
-                            return false;
-                        }
-                    }
-                    return true;
-                }
-            }
-            return false;
-        }
-        public static bool Ext_IsValidEmailAddress(this string s)
-        {
-            Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
-            return regex.IsMatch(s);
-        }
-
-        /// <summary> Converts the string representation of a Guid toits Guid 
-        ///  equivalent. A return value indicates whether the operation succeeded. 
-        /// </summary> 
-        /// <param name="s">A string containing a Guid to convert.</param> 
-        /// <param name="result"> /// When this method returns, contains the Guid value equivalent to /// the Guid contained in <paramref name="s"/>, if the conversion  succeeded, or <see cref="Guid.Empty"/> if theconversion failed. /// The conversion fails if the 
-        /// <paramref name="s"/> parameter is a /// <see langword="null" /> reference (<see langword="Nothing" /> in /// Visual Basic), or is not of the correct format.
-        /// </param> ///
-        /// <value> /// <see langword="true" /> if <paramref name="s"/> was converted /// successfully; otherwise, <see langword="false" />.  </value> 
-        /// <exception cref="ArgumentNullException"> /// Thrown if <pararef name="s"/> is <see langword="null"/>. /// </exception>  
-        /// <remarks> /// Original code at https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=94072&wa=wsignin1.0#tabs  </remarks> 
-        public static bool Ext_IsValidGuid(this string s)
-        {
-            if (s == null)
-                throw new ArgumentNullException("s");
-            Regex format = new Regex("^[A-Fa-f0-9]{32}$|" +
-                "^({|\\()?[A-Fa-f0-9]{8}-([A-Fa-f0-9]{4}-){3}[A-Fa-f0-9]{12}(}|\\))?$|" +
-                "^({)?[0xA-Fa-f0-9]{3,10}(, {0,1}[0xA-Fa-f0-9]{3,6}){2},{0,1}({)([0xA-Fa-f0-9]{3,4}, {0,1}){7}[0xA-Fa-f0-9]{3,4}(}})$");
-            Match match = format.Match(s);
-            return match.Success;
-        }
-        public static bool Ext_IsValidUrl(this string text)
-        {
-            ///Uri temp; return Uri.TryCreate(text);
-            Regex rx = new Regex(@"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?", RegexOptions.Compiled);
-            return rx.IsMatch(text);
-        }
-
-        #endregion
-
-        #region is
-        public static bool Ext_IsNullOrEmpty(this string str)
-        {
-            return String.IsNullOrEmpty(str);
-        }
-
-
-        #endregion
-        public static string Ext_GetRightSideOfString(this string s, int count)
+        public static string GetRightSideOfString(this string s, int count)
         {
             string newString = String.Empty;
             if (s != null && count > 0)
@@ -84,7 +22,8 @@ namespace AroLibraries.ExtensionMethods.Strings
             }
             return newString;
         }
-        public static int Ext_CountLinesInString(this string str)
+
+        public static int CountLinesInString(this string str)
         {
             if (str == null) throw new ArgumentNullException("String is NULL");
 
@@ -96,7 +35,8 @@ namespace AroLibraries.ExtensionMethods.Strings
             }
             return counter;
         }
-        public static string Ext_Reverse(this string s)
+
+        public static string Reverse(this string s)
         {
             if (s == null) throw new ArgumentNullException("String is NULL");
 
@@ -105,8 +45,7 @@ namespace AroLibraries.ExtensionMethods.Strings
             return new string(charArray);
         }
 
-
-        public static IList<char> Ext_GetUsedChars(this string iString)
+        public static IList<char> GetUsedChars(this string iString)
         {
             IList<char> vList = new List<char>();
             for (int i = 0; i < iString.Length; i++)
@@ -121,5 +60,107 @@ namespace AroLibraries.ExtensionMethods.Strings
             return vList;
         }
 
+        public static string ReplaceOnce(this string iString, string iOldValue, string iNewValue) //todo: test it
+        {
+            if (string.IsNullOrEmpty(iString) || string.IsNullOrEmpty(iOldValue)
+                || iNewValue == null) throw new ArgumentException("String is NULL or Empty");
+
+            string rString = iString;
+            string vString = rString;
+            if (iString.Contains(iOldValue))
+            {
+                var vStartindex = iString.IndexOf(iOldValue);
+
+                rString = iString.Substring(0, vStartindex);
+                rString += iNewValue;
+                rString += iString.Substring(vStartindex + iOldValue.Length);
+            }
+            return rString;
+        }
+
+        public static string FormatWith(this string iString, params object[] iArguments)
+        {
+            return string.Format(iString, iArguments);
+        }
+
+        #region is
+
+        public static bool IsMatch(this string iString, string iRegularExpression, bool matchEntirely)
+        {
+            return Regex.IsMatch(iString, matchEntirely ? "\\A" + iRegularExpression + "\\z" : iRegularExpression);
+        }
+
+        public static bool IsNullOrEmpty(this string str)
+        {
+            return String.IsNullOrEmpty(str);
+        }
+
+        #endregion is
+
+        #region Convert To
+
+        public static int ToInt(this string iString)
+        {
+            int rInt;
+            int.TryParse(iString, out rInt);
+            return rInt;
+        }
+
+        public static decimal ToDecimal(this string iString)
+        {
+            decimal rDecimal;
+            decimal.TryParse(iString, out rDecimal);
+            return rDecimal;
+        }
+
+        public static double ToDouble(this string iString)
+        {
+            double rDecimal;
+            double.TryParse(iString, out rDecimal);
+            return rDecimal;
+        }
+
+        public static bool ToBool(this string iString)
+        {
+            bool rBool = false;
+            if (ReferenceEquals(iString, null) == false)
+            {
+                bool.TryParse(iString, out rBool);
+            }
+            return rBool;
+        }
+
+        public static DateTime ToDateTime(this string iString, DateTime defaultValue)
+        {
+            DateTime res;
+            if (!string.IsNullOrEmpty(iString))
+                return DateTime.TryParse(iString, out res) ? res : defaultValue;
+            else
+                return defaultValue;
+        }
+
+        public static FileInfo ToFileInfo(this string iFileString)
+        {
+            FileInfo rFileInfo = new FileInfo(iFileString);
+            if (rFileInfo.Exists)
+            {
+                return rFileInfo;
+            }
+            throw new FileNotFoundException("NO FILE at: " + iFileString, iFileString);
+        }
+
+        public static string ToUpperFirstChar(this string iString)
+        {
+            if (iString == null) throw new ArgumentNullException("String is NULL");
+            var chars = iString.ToCharArray();
+            if (chars.Length > 0)
+            {
+                chars[0] = Char.ToUpper(chars[0]);
+            }
+            string rString = new String(chars);
+            return rString;
+        }
+
+        #endregion Convert To
     }
 }

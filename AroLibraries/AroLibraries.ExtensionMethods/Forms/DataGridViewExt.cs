@@ -8,7 +8,7 @@ namespace AroLibraries.ExtensionMethods.Forms
 {
     public static class DataGridViewExt
     {
-        public static IList<string> Ext_GetColumnNames(this DataGridView iDataGridView)
+        public static IList<string> GetColumnNames(this DataGridView iDataGridView)
         {
             IList<string> oColumnanames = new List<string>();
             foreach (DataGridViewColumn vColumn in iDataGridView.Columns)
@@ -18,7 +18,5 @@ namespace AroLibraries.ExtensionMethods.Forms
             }
             return oColumnanames;
         }
-
-
     }
 }

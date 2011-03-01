@@ -8,7 +8,7 @@ namespace AroLibraries.ExtensionMethods.Enumerable
 {
     public static class ArrayExt
     {
-        public static Size Ext_GetSize(this Array iArray)
+        public static Size GetSize(this Array iArray)
         {
             Size vSize = new Size();
             int length = iArray.Length;
@@ -38,7 +38,6 @@ namespace AroLibraries.ExtensionMethods.Enumerable
                 index[0] = 0;
                 for (int i = 0; i <= length; i++)
                 {
-
                     index[1] = i;
                     try
                     {
@@ -53,7 +52,8 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             }
             return vSize;
         }
-        public static T[] Ext_ConvertTo<T>(this Array ar)
+
+        public static T[] ConvertTo<T>(this Array ar)
         {
             T[] ret = new T[ar.Length];
             System.ComponentModel.TypeConverter tc = System.ComponentModel.TypeDescriptor.GetConverter(typeof(T));
