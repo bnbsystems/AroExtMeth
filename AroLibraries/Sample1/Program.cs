@@ -30,7 +30,7 @@ namespace Sample1
             var numbors2x1 = numbers.Repeat(2, true); //{1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9}
             var numbors2x2 = numbers.Repeat(2, false); // {1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9}
             var numbersRandom = numbers.Shuffle(); //Randomise collections
-            9.Ext_In(numbers); //Checks if 9 is in colection
+            9.In(numbers); //Checks if 9 is in colection
             numbers.ToString(";"); // "1; 2; 3; 4; 5; 6; 7; 8; 9"
 
             ConsoleExt.WriteLine(numbers); //Writes collections of numbers
@@ -86,16 +86,16 @@ namespace Sample1
         private static void Sample1()
         {
             var number = 9.8F;
-            var numberBetween = number.Ext_IsBetween(9, 10); //is Betwen 9, 10
+            var numberBetween = number.IsBetween(9, 10); //is Betwen 9, 10
 
             int? nullableInt = null;
             var nullEqual = nullableInt.HasValueAndEquals(1);
 
             char aChar = 'E';
             var vowel = aChar.IsVowel(); //true
-            var charBeween = aChar.Ext_IsBetween('A', 'F');
-            var charLimit1 = aChar.Ext_Limit('B'); //Return 'B'
-            var charLimit2 = aChar.Ext_Limit('F'); //Return 'E'
+            var charBeween = aChar.IsBetween('A', 'F');
+            var charLimit1 = aChar.Limit('B'); //Return 'B'
+            var charLimit2 = aChar.Limit('F'); //Return 'E'
 
             string guid = "4AAB7F67-A898-442a-884A-364411D584EC";
             var guidvalid = guid.IsValidGuid(); //Check if string is in GUID format
@@ -112,7 +112,7 @@ namespace Sample1
             var wordLast = word.GetRightSideOfString(13); //"about Library"
 
             DateTime.Now.IsWeekend();//
-            DateTime.Now.Ext_IsBetween(DateTime.MinValue, DateTime.MaxValue);
+            DateTime.Now.IsBetween(DateTime.MinValue, DateTime.MaxValue);
 
             var ex = new Exception("0", new Exception("1", new Exception("2", new Exception("3"))));
             var innerEx = ex.GetMostInner();

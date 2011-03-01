@@ -48,7 +48,7 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             return rList;
         }
 
-        public static IEnumerable<T> Ext_AsEnumerable<T>(this IEnumerable iEnumerable)
+        public static IEnumerable<T> AsEnumerable<T>(this IEnumerable iEnumerable)
         {
             foreach (var item in iEnumerable)
             {
