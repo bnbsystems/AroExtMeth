@@ -6,3 +6,9 @@ C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\bin
 C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\ResolveAssemblyReference.cache
 C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.dll
 C:\Projects\codeplex\AroLibraries\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.pdb
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\ResolveAssemblyReference.cache
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.pdb
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\bin\Debug\AroLibraries.ExtensionMethods.dll.config
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\bin\Debug\AroLibraries.ExtensionMethods.dll
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\bin\Debug\AroLibraries.ExtensionMethods.pdb
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.dll

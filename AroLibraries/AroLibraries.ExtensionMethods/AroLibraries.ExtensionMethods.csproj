@@ -36,6 +36,8 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -47,20 +49,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BooleanExt.cs" />
-    <Compile Include="ConsoleExt.cs" />
-    <Compile Include="DateTimeExt.cs" />
-    <Compile Include="DecimalExt.cs" />
+    <Compile Include="Common\BooleanExt.cs" />
+    <Compile Include="Common\IComparableExt.cs" />
+    <Compile Include="Console\ConsoleExt.cs" />
+    <Compile Include="Common\DateTimeExt.cs" />
+    <Compile Include="Common\DecimalExt.cs" />
+    <Compile Include="Cryptography\X509Certificate2Ext.cs" />
+    <Compile Include="DEBUG\DebugIEnumerable.cs" />
+    <Compile Include="Drawing\BitmapExt.cs" />
     <Compile Include="Drawing\ColorExt.cs" />
     <Compile Include="Enumerable\ArrayExt.cs" />
     <Compile Include="Enumerable\IDictionaryExt.cs" />
     <Compile Include="Enumerable\IEnumerableExt.cs" />
-    <Compile Include="ExceptionExt.cs" />
-    <Compile Include="ExpressionExt.cs" />
+    <Compile Include="Common\ExceptionExt.cs" />
+    <Compile Include="Common\ExpressionExt.cs" />
     <Compile Include="Forms\ComboBoxExt.cs" />
     <Compile Include="Forms\DataGridViewExt.cs" />
-    <Compile Include="IntExt.cs" />
-    <Compile Include="NullableExt.cs" />
+    <Compile Include="Common\IntExt.cs" />
+    <Compile Include="Common\NullableExt.cs" />
+    <Compile Include="Forms\TextBoxExt.cs.cs" />
+    <Compile Include="IO\FileInfoExt.cs" />
+    <Compile Include="IO\StreamExt.cs" />
     <Compile Include="Objects\ObjectExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -70,6 +79,9 @@
     </Compile>
     <Compile Include="Strings\CharExt.cs" />
     <Compile Include="Strings\StringExt.cs" />
+    <Compile Include="Strings\Validator\StringExtValidator.cs" />
+    <Compile Include="Web\DropDownListExt.cs" />
+    <Compile Include="Web\HttpSessionStateExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

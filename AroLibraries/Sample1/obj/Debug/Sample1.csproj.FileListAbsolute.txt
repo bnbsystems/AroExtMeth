@@ -5,3 +5,10 @@ C:\Projects\codeplex\AroLibraries\AroLibraries\Sample1\bin\Debug\AroLibraries.Ex
 C:\Projects\codeplex\AroLibraries\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.pdb
 C:\Projects\codeplex\AroLibraries\AroLibraries\Sample1\obj\Debug\Sample1.exe
 C:\Projects\codeplex\AroLibraries\AroLibraries\Sample1\obj\Debug\Sample1.pdb
+D:\priv\Project\aro\AroLibraries\Sample1\obj\Debug\Sample1.exe
+D:\priv\Project\aro\AroLibraries\Sample1\obj\Debug\Sample1.pdb
+D:\priv\Project\aro\AroLibraries\Sample1\obj\Debug\ResolveAssemblyReference.cache
+D:\priv\Project\aro\AroLibraries\Sample1\bin\Debug\Sample1.exe
+D:\priv\Project\aro\AroLibraries\Sample1\bin\Debug\Sample1.pdb
+D:\priv\Project\aro\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.dll
+D:\priv\Project\aro\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.pdb

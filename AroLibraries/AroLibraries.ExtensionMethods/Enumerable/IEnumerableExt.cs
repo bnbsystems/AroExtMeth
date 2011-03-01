@@ -11,49 +11,140 @@ namespace AroLibraries.ExtensionMethods.Enumerable
 {
     public static class IEnumerableExt
     {
-        public static T Ext_Aggregate<T>(this IEnumerable<T> list, Func<T, T, T> aggregateFunction)
+        #region NoN-GENERIC
+
+        public static IEnumerable SelectRecursive<T>(this IEnumerable iEnumerator, Func<T, IEnumerable> iSelectManyFunc)
+            where T : class
         {
-            return Ext_Aggregate<T>(list, default(T), aggregateFunction);
+            if (iEnumerator != null)
+            {
+                foreach (var item in iEnumerator)
+                {
+                    yield return item;
+                    T itemT = item as T;
+                    if (itemT != null)
+                    {
+                        var selectedElements = iSelectManyFunc(itemT);
+                        var subitem = selectedElements.SelectRecursive(iSelectManyFunc);
+                        foreach (var item2 in subitem)
+                        {
+                            yield return item2;
+                        }
+                    }
+                }
+            }
         }
-        public static T Ext_Aggregate<T>(this IEnumerable<T> list, T defaultValue, Func<T, T, T> aggregateFunction)
+
+        public static IList ToList<T>(this IEnumerable iEnumerator)
+            where T : class
+        {
+            var rList = new List<T>();
+            foreach (var item in iEnumerator)
+            {
+                T objectT = item as T;
+                rList.Add(objectT);
+            }
+
+            return rList;
+        }
+
+        public static IEnumerable<T> Ext_AsEnumerable<T>(this IEnumerable iEnumerable)
+        {
+            foreach (var item in iEnumerable)
+            {
+                yield return (T)item;
+            }
+        }
+
+        #endregion NoN-GENERIC
+
+        #region Generic
+
+        public static IEnumerable<T> SelectRecursive<T>(this IEnumerable<T> iEnumerator, Func<T, IEnumerable<T>> iSelectManyFunc)
+        {
+            if (iEnumerator != null)
+            {
+                foreach (T item in iEnumerator)
+                {
+                    yield return item;
+                    var selectedElements = iSelectManyFunc(item);
+                    var subitem = selectedElements.SelectRecursive(iSelectManyFunc);
+                    foreach (var item2 in subitem)
+                    {
+                        yield return item2;
+                    }
+                }
+            }
+        }
+
+        public static bool All<T>(this IEnumerable<T> iEnumerator, T elementToCompare) //todo: check it
+        {
+            if (iEnumerator != null)
+            {
+                foreach (var item in iEnumerator)
+                {
+                    if (item.Equals(elementToCompare) == false)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+
+        public static bool All<T>(this  IEnumerable<T> iEnumerator, uint minCountNumber)// todo: check it
+        {
+            if (iEnumerator != null && iEnumerator.Count() > minCountNumber)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static T Aggregate<T>(this IEnumerable<T> list, Func<T, T, T> aggregateFunction)
+        {
+            return Aggregate<T>(list, default(T), aggregateFunction);
+        }
+
+        public static T Aggregate<T>(this IEnumerable<T> list, T defaultValue, Func<T, T, T> aggregateFunction)
         {
             return list.Count() <= 0 ?
                 defaultValue : list.Aggregate<T>(aggregateFunction);
         }
 
-
-        public static DataTable Ext_ToDataTable<T>(this IEnumerable<T> varlist)
+        public static DataTable ToDataTable<T>(this IEnumerable<T> varlist)
         {
             DataTable dtReturn = new DataTable();
 
-            // column names 
+            // column names
             PropertyInfo[] oProps = null;
             FieldInfo[] oField = null;
             if (varlist == null) return dtReturn;
 
             foreach (T rec in varlist)
             {
-                // Use reflection to get property names, to create table, Only first time, others will follow 
+                // Use reflection to get property names, to create table, Only first time, others will follow
                 if (oProps == null)
                 {
-                    oProps = ((Type) rec.GetType()).GetProperties();
+                    oProps = ((Type)rec.GetType()).GetProperties();
                     foreach (PropertyInfo pi in oProps)
                     {
                         Type colType = pi.PropertyType;
 
-                        if ((colType.IsGenericType) && (colType.GetGenericTypeDefinition() == typeof (Nullable<>)))
+                        if ((colType.IsGenericType) && (colType.GetGenericTypeDefinition() == typeof(Nullable<>)))
                         {
                             colType = colType.GetGenericArguments()[0];
                         }
 
                         dtReturn.Columns.Add(new DataColumn(pi.Name, colType));
                     }
-                    oField = ((Type) rec.GetType()).GetFields();
+                    oField = ((Type)rec.GetType()).GetFields();
                     foreach (FieldInfo fieldInfo in oField)
                     {
                         Type colType = fieldInfo.FieldType;
 
-                        if ((colType.IsGenericType) && (colType.GetGenericTypeDefinition() == typeof (Nullable<>)))
+                        if ((colType.IsGenericType) && (colType.GetGenericTypeDefinition() == typeof(Nullable<>)))
                         {
                             colType = colType.GetGenericArguments()[0];
                         }
@@ -83,7 +174,7 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             return dtReturn;
         }
 
-        public static IEnumerable<TDestination> Ext_Convert<TSource,
+        public static IEnumerable<TDestination> Convert<TSource,
                 TDestination>(this IEnumerable<TSource> enumerable,
                 Func<TSource, TDestination> converter)
         {
@@ -100,18 +191,18 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             return items.AsEnumerable();
         }
 
-        public static IEnumerable<IEnumerable<T>> Ext_Split<T>(this IEnumerable<T> source, int splitSize)
+        public static IEnumerable<IEnumerable<T>> Split<T>(this IEnumerable<T> source, int splitSize)
         {
             using (IEnumerator<T> enumerator = source.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {
-                    yield return Ext_SplitInner(enumerator, splitSize);
+                    yield return SplitInner(enumerator, splitSize);
                 }
             }
-
         }
-        private static IEnumerable<T> Ext_SplitInner<T>(IEnumerator<T> enumerator, int splitSize)
+
+        private static IEnumerable<T> SplitInner<T>(IEnumerator<T> enumerator, int splitSize)
         {
             int count = 0;
             do
@@ -123,13 +214,13 @@ namespace AroLibraries.ExtensionMethods.Enumerable
                  && enumerator.MoveNext());
         }
 
-        ///<summary>  Concatenates a specified separator String betweeneach element of a specified enumeration, yielding a single concatenatedstring. /// 
+        ///<summary>  Concatenates a specified separator String betweeneach element of a specified enumeration, yielding a single concatenatedstring. ///
         /// </summary>
-        ///  <typeparam name="T">anyobject</typeparam> 
-        /// /// <param name="list">The enumeration</param> 
-        /// <param name="separator">A String</param> 
+        ///  <typeparam name="T">anyobject</typeparam>
+        /// /// <param name="list">The enumeration</param>
+        /// <param name="separator">A String</param>
         /// <returns>A String consisting of the elements of value interspersed with the separator string.</returns>
-        public static string Ext_ToString<T>(this IEnumerable<T> list, string separator)
+        public static string ToString<T>(this IEnumerable<T> list, string separator)
         {
             StringBuilder sb = new StringBuilder();
             foreach (var obj in list)
@@ -143,7 +234,7 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             return sb.ToString();
         }
 
-        public static IEnumerable<T> Ext_Shuffle<T>(this IEnumerable<T> list)
+        public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> list)
         {
             var r = new Random((int)DateTime.Now.Ticks);
             var shuffledList = list.Select(x => new { Number = r.Next(), Item = x })
@@ -151,25 +242,25 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             return shuffledList.ToList();
         }
 
-
-        /// <summary>  Returns the index of the first occurrence in a sequence by using the default equality comparer. 
-        ///</summary> 
-        /// <typeparam name="TSource">The type of the elements of source.</typeparam> 
-        /// <param name="list">A sequence in which to locate a value.</param> 
-        /// <param name="value">The object to locate in the sequence</param> 
+        /// <summary>  Returns the index of the first occurrence in a sequence by using the default equality comparer.
+        ///</summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="list">A sequence in which to locate a value.</param>
+        /// <param name="value">The object to locate in the sequence</param>
         /// <returns>The zero-based index of the first occurrence of value within the entire sequence, if found; otherwise, –1.</returns>
-        public static int Ext_IndexOf<TSource>(this IEnumerable<TSource> list, TSource value)
+        public static int IndexOf<TSource>(this IEnumerable<TSource> list, TSource value)
             where TSource : IEquatable<TSource>
         {
-            return list.Ext_IndexOf<TSource>(value, EqualityComparer<TSource>.Default);
+            return list.IndexOf<TSource>(value, EqualityComparer<TSource>.Default);
         }
-        /// <summary> Returns the index of the first occurrence in a sequence by using aspecified IEqualityComparer. 
+
+        /// <summary> Returns the index of the first occurrence in a sequence by using aspecified IEqualityComparer.
         /// </summary> ///
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="list">A sequence in which to locate a value.</param> ///
-        ///  <param name="value">The object to locate in the sequence</param> /// <param name="comparer">An equality comparer to compare values.</param> 
+        ///  <param name="value">The object to locate in the sequence</param> /// <param name="comparer">An equality comparer to compare values.</param>
         /// <returns>The zero-based index of the first occurrence of value within the entire sequence, if found; otherwise, –1.</returns>
-        public static int Ext_IndexOf<TSource>(this IEnumerable<TSource> list, TSource value, IEqualityComparer<TSource> comparer)
+        public static int IndexOf<TSource>(this IEnumerable<TSource> list, TSource value, IEqualityComparer<TSource> comparer)
         {
             int index = 0;
             foreach (var item in list)
@@ -183,8 +274,7 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             return -1;
         }
 
-
-        public static IEnumerable<T> Ext_ForEach<T>(this IEnumerable<T> source, Action<T> action)
+        public static IEnumerable<T> ForEach<T>(this IEnumerable<T> source, Action<T> action)
         {
             foreach (T item in source)
             {
@@ -193,33 +283,24 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             }
         }
 
-        public static IEnumerable<T> Ext_Sleep<T>(this IEnumerable<T> source, int millisecondsTimeout)
+        public static IEnumerable<T> Sleep<T>(this IEnumerable<T> source, int millisecondsTimeout)
         {
             foreach (T enumerable in source)
             {
                 Thread.Sleep(millisecondsTimeout);
                 yield return enumerable;
             }
-
         }
 
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="TSource"></typeparam>
         /// <param name="source"></param>
         /// <param name="condition"></param>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        public static IEnumerable<TSource> Ext_WhereIf<TSource>(this IEnumerable<TSource> source, bool condition, Func<TSource, bool> predicate)
-        {
-            if (condition)
-                return source.Where(predicate);
-            else
-                return source;
-        }
-        public static IEnumerable<TSource> Ext_WhereIf<TSource>(this IEnumerable<TSource> source, bool condition, Func<TSource, int, bool> predicate)
+        public static IEnumerable<TSource> WhereIf<TSource>(this IEnumerable<TSource> source, bool condition, Func<TSource, bool> predicate)
         {
             if (condition)
                 return source.Where(predicate);
@@ -227,7 +308,15 @@ namespace AroLibraries.ExtensionMethods.Enumerable
                 return source;
         }
 
-        public static IOrderedEnumerable<TSource> Ext_OrderBy<TSource, TKey>(this IEnumerable<TSource> enumerable, Func<TSource, TKey> keySelector, bool descending)
+        public static IEnumerable<TSource> WhereIf<TSource>(this IEnumerable<TSource> source, bool condition, Func<TSource, int, bool> predicate)
+        {
+            if (condition)
+                return source.Where(predicate);
+            else
+                return source;
+        }
+
+        public static IOrderedEnumerable<TSource> OrderBy<TSource, TKey>(this IEnumerable<TSource> enumerable, Func<TSource, TKey> keySelector, bool descending)
         {
             if (enumerable == null) { return null; }
             if (descending)
@@ -236,7 +325,8 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             }
             return enumerable.OrderBy(keySelector);
         }
-        public static IOrderedEnumerable<TSource> Ext_OrderBy<TSource>(this IEnumerable<TSource> enumerable, Func<TSource, IComparable> keySelector1, Func<TSource, IComparable> keySelector2, params Func<TSource, IComparable>[] keySelectors)
+
+        public static IOrderedEnumerable<TSource> OrderBy<TSource>(this IEnumerable<TSource> enumerable, Func<TSource, IComparable> keySelector1, Func<TSource, IComparable> keySelector2, params Func<TSource, IComparable>[] keySelectors)
         {
             if (enumerable == null)
             {
@@ -252,7 +342,8 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             } current = current.OrderBy(keySelector2);
             return current.OrderBy(keySelector1);
         }
-        public static IOrderedEnumerable<TSource> Ext_OrderBy<TSource>(this IEnumerable<TSource> enumerable, bool descending, Func<TSource, IComparable> keySelector, params Func<TSource, IComparable>[] keySelectors)
+
+        public static IOrderedEnumerable<TSource> OrderBy<TSource>(this IEnumerable<TSource> enumerable, bool descending, Func<TSource, IComparable> keySelector, params Func<TSource, IComparable>[] keySelectors)
         {
             if (enumerable == null)
             {
@@ -263,16 +354,17 @@ namespace AroLibraries.ExtensionMethods.Enumerable
                 for (int i =
                     keySelectors.Length - 1; i >= 0; i--)
                 {
-                    current = current.Ext_OrderBy(keySelectors[i], descending);
+                    current = current.OrderBy(keySelectors[i], descending);
                 }
-            } return current.Ext_OrderBy(keySelector, descending);
+            } return current.OrderBy(keySelector, descending);
         }
-        public static IEnumerable<TResult> Ext_GetEmpty<TResult>(this IEnumerable<TResult> source)
+
+        public static IEnumerable<TResult> GetEmpty<TResult>(this IEnumerable<TResult> source)
         {
             yield break;
         }
 
-        public static IEnumerable<TResult> Ext_Repeat<TResult>(this IEnumerable<TResult> source, int count, bool onEndOfCollection)
+        public static IEnumerable<TResult> Repeat<TResult>(this IEnumerable<TResult> source, int count, bool onEndOfCollection)
         {
             if (count < 0)
             {
@@ -283,7 +375,6 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             {
                 for (int i = 0; i < count; i++)
                 {
-
                     foreach (TResult result in source)
                     {
                         yield return result;
@@ -301,11 +392,9 @@ namespace AroLibraries.ExtensionMethods.Enumerable
                     }
                 }
             }
-
-
         }
 
-        public static IEnumerable<int> Ext_GetInnerCount<TResult>(IEnumerable<TResult> source)
+        public static IEnumerable<int> GetInnerCount<TResult>(IEnumerable<TResult> source)
     where TResult : ICollection
         {
             foreach (TResult result in source)
@@ -314,8 +403,7 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             }
         }
 
-
-        public static IEnumerable<TSource> Ext_StopUntile<TSource>(this IEnumerable<TSource> dumySource, Predicate<TSource> predicate)
+        public static IEnumerable<TSource> StopUntile<TSource>(this IEnumerable<TSource> dumySource, Predicate<TSource> predicate)
         {
             foreach (TSource item in dumySource)
             {
@@ -327,6 +415,6 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             }
         }
 
-
+        #endregion Generic
     }
 }

@@ -8,7 +8,7 @@ namespace AroLibraries.ExtensionMethods.Forms
 {
     public static class ComboBoxExt
     {
-        public static int Ext_FillItems<T>(this ComboBox comboBox, IEnumerable<T> enumerable)
+        public static int FillItems<T>(this ComboBox comboBox, IEnumerable<T> enumerable)
         {
             int counter = 0;
             comboBox.Items.Clear();
@@ -19,7 +19,5 @@ namespace AroLibraries.ExtensionMethods.Forms
             }
             return counter;
         }
-
-
     }
 }
