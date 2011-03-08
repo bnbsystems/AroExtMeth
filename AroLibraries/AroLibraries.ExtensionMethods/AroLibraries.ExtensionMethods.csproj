@@ -82,6 +82,8 @@
     <Compile Include="Strings\Validator\StringExtValidator.cs" />
     <Compile Include="Web\DropDownListExt.cs" />
     <Compile Include="Web\HttpSessionStateExt.cs" />
+    <Compile Include="XML\XElementExt.cs" />
+    <Compile Include="XML\XmlNodeExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
