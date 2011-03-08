@@ -53,6 +53,27 @@ namespace AroLibraries.ExtensionMethods.Objects
 
         #region Convert TO
 
+        public static TIn ToIf<TIn>(this TIn iObject, Predicate<TIn> predicate, Func<TIn, TIn> func)
+        {
+            if (ReferenceEquals(iObject, null))
+            {
+                return default(TIn);
+            }
+            if (predicate(iObject))
+            {
+                return func(iObject);
+            }
+            return iObject;
+        }
+
+        public static void DoIfNotNull<T>(this T iObject, Action<T> action)
+        {
+            if (iObject != null)
+            {
+                action(iObject);
+            }
+        }
+
         public static int ToInt(this object iObject, int iDefaultvalue)
         {
             if (iObject == null)
@@ -82,7 +103,74 @@ namespace AroLibraries.ExtensionMethods.Objects
             return rStirng.ToString();
         }
 
+        public static bool ToBool(this object iObject)
+        {
+            bool rBool;
+            if (iObject == null)
+            {
+                return false;
+            }
+            bool.TryParse(iObject.ToString(), out rBool);
+            return rBool;
+        }
+
+        public static DateTime ToDateTime(this object iObject, DateTime defaultDateTime)
+        {
+            if (ReferenceEquals(iObject, null))
+            {
+                return defaultDateTime;
+            }
+            DateTime rDateTime = defaultDateTime;
+            if (DateTime.TryParse(iObject.ToString(), out rDateTime) == false)
+            {
+                rDateTime = defaultDateTime;
+            }
+            return rDateTime;
+        }
+
+        public static DateTime ToDateTime(this object iObject)
+        {
+            return ToDateTime(iObject, DateTime.Now);
+        }
+
+        public static DateTime? ToDateTimeNullable(this object iObject)
+        {
+            return ToDateTimeNullable(iObject, x => true);
+        }
+
+        public static DateTime? ToDateTimeNullable(this object iObject, Predicate<DateTime> predicate)
+        {
+            if (ReferenceEquals(iObject, null))
+            {
+                return null;
+            }
+            DateTime rDateTime;
+            if (DateTime.TryParse(iObject.ToString(), out rDateTime))
+            {
+                if (predicate(rDateTime))
+                {
+                    return rDateTime;
+                }
+            }
+            return null;
+        }
+
+        public static string ToString<T>(this T iObject, Predicate<T> predicate, string iElseString)
+        {
+            if (ReferenceEquals(iObject, null))
+            {
+                return iElseString;
+            }
+            if (predicate(iObject))
+            {
+                return iObject.ToString();
+            }
+            return iElseString;
+        }
+
         #endregion Convert TO
+
+        #region IS
 
         public static bool IsNotNull(this object iObject)
         {
@@ -93,6 +181,8 @@ namespace AroLibraries.ExtensionMethods.Objects
         {
             return (iObject == null || iObject == DBNull.Value);
         }
+
+        #endregion IS
 
         public static void CloneProperties<T1, T2>(this T1 origin, T2 destination)
         {
