@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AroLibraries.ExtensionMethods.Strings
@@ -93,6 +91,11 @@ namespace AroLibraries.ExtensionMethods.Strings
         public static bool IsNullOrEmpty(this string str)
         {
             return String.IsNullOrEmpty(str);
+        }
+
+        public static bool IsNullOrWhitespace(this string str)
+        {
+            return String.IsNullOrEmpty(str) || String.IsNullOrEmpty(str.Trim());
         }
 
         #endregion is
