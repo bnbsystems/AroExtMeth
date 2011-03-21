@@ -48,6 +48,16 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             return rList;
         }
 
+        public static object[] ToArrayOfObjects(this IEnumerable list)
+        {
+            IList<object> rList = new List<object>();
+            foreach (var obj in list)
+            {
+                rList.Add(rList);
+            }
+            return rList.ToArray();
+        }
+
         public static IEnumerable<T> AsEnumerable<T>(this IEnumerable iEnumerable)
         {
             foreach (var item in iEnumerable)

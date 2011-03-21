@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AroLibraries.ExtensionMethods.Strings
@@ -162,6 +163,13 @@ namespace AroLibraries.ExtensionMethods.Strings
             }
             string rString = new String(chars);
             return rString;
+        }
+
+        public static Byte[] ToByteArray(this string iString)
+        {
+            if (iString == null) throw new ArgumentNullException("String is NULL");
+            Byte[] rData = Encoding.ASCII.GetBytes(iString);
+            return rData;
         }
 
         #endregion Convert To

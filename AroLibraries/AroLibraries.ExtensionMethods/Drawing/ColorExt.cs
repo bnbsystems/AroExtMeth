@@ -40,7 +40,7 @@ namespace AroLibraries.ExtensionMethods.Drawing
             return Color.FromArgb(red, green, blue);
         }
 
-        public static Color FromHex(string iStirngHex)
+        public static Color ToColorFromHex(string iStirngHex)
         {
             return System.Drawing.ColorTranslator.FromHtml(iStirngHex);
         }
