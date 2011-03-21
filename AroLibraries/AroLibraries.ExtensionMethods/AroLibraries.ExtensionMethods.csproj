@@ -50,11 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\BooleanExt.cs" />
+    <Compile Include="Common\ByteExt.cs" />
     <Compile Include="Common\IComparableExt.cs" />
     <Compile Include="Console\ConsoleExt.cs" />
     <Compile Include="Common\DateTimeExt.cs" />
     <Compile Include="Common\DecimalExt.cs" />
     <Compile Include="Cryptography\X509Certificate2Ext.cs" />
+    <Compile Include="Data\SqlParameterCollectionExt.cs" />
     <Compile Include="DEBUG\DebugIEnumerable.cs" />
     <Compile Include="Drawing\BitmapExt.cs" />
     <Compile Include="Drawing\ColorExt.cs" />
