@@ -170,7 +170,7 @@ namespace AroLibraries.ExtensionMethods
 
         #region Convert
 
-        public static int Ext_ToInt(this Boolean iBool)
+        public static int ToInt(this Boolean iBool)
         {
             if (iBool)
                 return 1;
