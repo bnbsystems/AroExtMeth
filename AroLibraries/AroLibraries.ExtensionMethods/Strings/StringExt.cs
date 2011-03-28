@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -99,6 +100,31 @@ namespace AroLibraries.ExtensionMethods.Strings
             return String.IsNullOrEmpty(str) || String.IsNullOrEmpty(str.Trim());
         }
 
+        public static bool IsNumber(this string str)
+        {
+            return str.ToCharArray().All(x => Char.IsNumber(x));
+        }
+
+        public static bool IsDigit(this string str)
+        {
+            return str.ToCharArray().All(x => Char.IsDigit(x));
+        }
+
+        public static bool IsLower(this string str)
+        {
+            return str.ToCharArray().All(x => Char.IsLower(x));
+        }
+
+        public static bool IsUpper(this string str)
+        {
+            return str.ToCharArray().All(x => Char.IsUpper(x));
+        }
+
+        public static bool IsControl(this string str)
+        {
+            return str.ToCharArray().All(x => Char.IsControl(x));
+        }
+
         #endregion is
 
         #region Convert To
@@ -170,6 +196,18 @@ namespace AroLibraries.ExtensionMethods.Strings
             if (iString == null) throw new ArgumentNullException("String is NULL");
             Byte[] rData = Encoding.ASCII.GetBytes(iString);
             return rData;
+        }
+
+        public static string ToStringFromHex(this string iStringHex)
+        {
+            if (iStringHex == null) throw new ArgumentNullException("String is NULL");
+            iStringHex = iStringHex.Replace("-", "");
+            byte[] raw = new byte[iStringHex.Length / 2];
+            for (int i = 0; i < raw.Length; i++)
+            {
+                raw[i] = Convert.ToByte(iStringHex.Substring(i * 2, 2), 16);
+            }
+            return Encoding.ASCII.GetString(raw);
         }
 
         #endregion Convert To
