@@ -210,6 +210,20 @@ namespace AroLibraries.ExtensionMethods.Strings
             return Encoding.ASCII.GetString(raw);
         }
 
+        public static System.Security.SecureString ToSecureString(this string iString)
+        {
+            System.Security.SecureString rPassWdStr = new System.Security.SecureString();
+            if (iString != null)
+            {
+                foreach (var item in iString)
+                {
+                    rPassWdStr.AppendChar(item);
+                }
+            }
+
+            return rPassWdStr;
+        }
+
         #endregion Convert To
     }
 }
