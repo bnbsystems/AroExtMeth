@@ -179,6 +179,16 @@ namespace AroLibraries.ExtensionMethods.Strings
             throw new FileNotFoundException("NO FILE at: " + iFileString, iFileString);
         }
 
+        public static DirectoryInfo ToDirectoryInfo(this string iDirectoryString)
+        {
+            DirectoryInfo rDirectoryInfo = new DirectoryInfo(iDirectoryString);
+            if (rDirectoryInfo.Exists)
+            {
+                return rDirectoryInfo;
+            }
+            throw new DirectoryNotFoundException("NO DIRECTORY at: " + iDirectoryString);
+        }
+
         public static string ToUpperFirstChar(this string iString)
         {
             if (iString == null) throw new ArgumentNullException("String is NULL");

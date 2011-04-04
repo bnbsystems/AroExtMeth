@@ -85,6 +85,13 @@ namespace AroLibraries.ExtensionMethods.Objects
             bool isOk = int.TryParse(iObject.ToString(), out rInt);
             if (isOk == false)
             {
+                try
+                {
+                    rInt = Convert.ToInt32(iObject);
+                }
+                catch (Exception) //FormatException OverflowException
+                {
+                }
                 return iDefaultvalue;
             }
             return rInt;
@@ -110,7 +117,15 @@ namespace AroLibraries.ExtensionMethods.Objects
             {
                 return false;
             }
-            bool.TryParse(iObject.ToString(), out rBool);
+            bool isOk = bool.TryParse(iObject.ToString(), out rBool);
+            if (isOk == false)
+            {
+                try
+                {
+                    rBool = Convert.ToBoolean(iObject);
+                }
+                catch { }
+            }
             return rBool;
         }
 
@@ -123,7 +138,14 @@ namespace AroLibraries.ExtensionMethods.Objects
             DateTime rDateTime = defaultDateTime;
             if (DateTime.TryParse(iObject.ToString(), out rDateTime) == false)
             {
-                rDateTime = defaultDateTime;
+                try
+                {
+                    rDateTime = Convert.ToDateTime(iObject);
+                }
+                catch
+                {
+                    rDateTime = defaultDateTime;
+                }
             }
             return rDateTime;
         }
@@ -147,6 +169,13 @@ namespace AroLibraries.ExtensionMethods.Objects
             DateTime rDateTime;
             if (DateTime.TryParse(iObject.ToString(), out rDateTime))
             {
+                try
+                {
+                    rDateTime = Convert.ToDateTime(iObject);
+                }
+                catch
+                { }
+
                 if (predicate(rDateTime))
                 {
                     return rDateTime;

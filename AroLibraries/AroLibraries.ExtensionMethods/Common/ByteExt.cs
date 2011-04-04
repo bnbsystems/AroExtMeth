@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text;
 
 namespace AroLibraries.ExtensionMethods
@@ -30,6 +31,25 @@ namespace AroLibraries.ExtensionMethods
         public static string ToBase64(this byte[] iBytes)
         {
             return Convert.ToBase64String(iBytes);
+        }
+
+        public static bool OpenBytesAsFile(this byte[] iBytes, string iExtension)
+        {
+            try
+            {
+                string tempFileName = "_tempOpenBytesAsFile." + iExtension;
+                using (var fStream = new FileStream(tempFileName, FileMode.OpenOrCreate))
+                {
+                    fStream.Write(iBytes, 0, iBytes.Length);
+                    fStream.Close();
+                    System.Diagnostics.ProcessStartInfo PDFstartInfo = new System.Diagnostics.ProcessStartInfo(tempFileName);
+                    System.Diagnostics.Process.Start(PDFstartInfo);
+                }
+                return true;
+            }
+            catch
+            { }
+            return false;
         }
     }
 }
