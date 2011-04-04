@@ -70,7 +70,9 @@
     <Compile Include="Common\IntExt.cs" />
     <Compile Include="Common\NullableExt.cs" />
     <Compile Include="Forms\TextBoxExt.cs.cs" />
+    <Compile Include="IO\DirectoryInfoExt.cs" />
     <Compile Include="IO\FileInfoExt.cs" />
+    <Compile Include="IO\FileStreamExt.cs" />
     <Compile Include="IO\StreamExt.cs" />
     <Compile Include="Objects\ObjectExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +82,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Strings\CharExt.cs" />
+    <Compile Include="Strings\StringBuilderExt.cs" />
     <Compile Include="Strings\StringExt.cs" />
     <Compile Include="Strings\Validator\StringExtValidator.cs" />
     <Compile Include="Web\DropDownListExt.cs" />
