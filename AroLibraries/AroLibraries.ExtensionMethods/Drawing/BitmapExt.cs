@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Drawing.Imaging;
 
 namespace AroLibraries.ExtensionMethods.Drawing
 {
@@ -25,6 +23,27 @@ namespace AroLibraries.ExtensionMethods.Drawing
         {
             Bitmap rBitmap = new Bitmap(iWidth, iWidth);
             return rBitmap.Fill(iColor);
+        }
+
+        public static bool SaveJpeg(this Bitmap iBitmap, string fileName)
+        {
+            return SaveJpeg(iBitmap, fileName, 100);
+        }
+
+        public static bool SaveJpeg(this Bitmap iBitmap, string iFileName, int iQuality)
+        {
+            try
+            {
+                EncoderParameters encoderParameters = new EncoderParameters(1);
+                encoderParameters.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, (long)iQuality);
+                iBitmap.Save(iFileName, ImageFormat.Jpeg.GetEncoder(), encoderParameters);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return false;
         }
     }
 }

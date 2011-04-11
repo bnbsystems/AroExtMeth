@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using AroLibraries.ExtensionMethods.Objects;
 
 namespace AroLibraries.ExtensionMethods.Strings
 {
@@ -125,16 +126,38 @@ namespace AroLibraries.ExtensionMethods.Strings
             return str.ToCharArray().All(x => Char.IsControl(x));
         }
 
+        public static bool IsContained(this string str, IEnumerable<string> strs)
+        {
+            foreach (var item in strs)
+            {
+                if (item.Contains(str))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool IsStringNull(this string iString)
+        {
+            if (ReferenceEquals(iString, null))
+            {
+                return true;
+            }
+            else if (iString.ToLower().Trim() == "null"
+                    || iString.ToLower().Trim() == "nil"
+                    || iString.ToLower().Trim() == "none"
+                    || iString.ToLower().Trim() == "nothing"
+                    )
+            {
+                return true;
+            }
+            return false;
+        }
+
         #endregion is
 
         #region Convert To
-
-        public static int ToInt(this string iString)
-        {
-            int rInt;
-            int.TryParse(iString, out rInt);
-            return rInt;
-        }
 
         public static decimal ToDecimal(this string iString)
         {
@@ -167,6 +190,90 @@ namespace AroLibraries.ExtensionMethods.Strings
                 return DateTime.TryParse(iString, out res) ? res : defaultValue;
             else
                 return defaultValue;
+        }
+
+        public static DateTime ToDateTimeEnd(this string iString)
+        {
+            return ToDateTimeEnd(iString, DateTime.MaxValue);
+        }
+
+        private static IEnumerable<int> gHourIterator = 0.IterateTo(23);
+        private static IEnumerable<int> gMonthIterator = 1.IterateTo(12);
+        private static IList<int> gDayIterator = 1.IterateTo(28).ToList();
+        private static IEnumerable<int> gMinuteIterator = 0.IterateTo(59);
+
+        public static DateTime ToDateTimeEnd(this string iString, DateTime defaultValue) //todo: test it
+        {
+            if (ReferenceEquals(iString, null))
+            {
+                return defaultValue;
+            }
+            var vString = iString.Trim().Replace(" ", "");
+            if (vString.IsDigit())
+            {
+                string strYear = "";
+                string strMonth = "";
+                string strDay = "";
+                string strHour = "";
+                string strMinute = "";
+                string strSecond = "";
+                for (int i = 0; i < vString.Length && i < 14; i++)
+                {
+                    var ch = vString[i];
+
+                    if (i.IsBetween(0, 3))
+                    {
+                        strYear += ch;
+                    }
+                    else if (i.IsBetween(4, 5))
+                    {
+                        strMonth += ch;
+                    }
+                    else if (i.IsBetween(6, 7))
+                    {
+                        strDay += ch;
+                    }
+                    else if (i.IsBetween(8, 9))
+                    {
+                        strHour += ch;
+                    }
+                    else if (i.IsBetween(10, 11))
+                    {
+                        strMinute += ch;
+                    }
+                    else if (i.IsBetween(12, 13))
+                    {
+                        strSecond += ch;
+                    }
+                    else
+                    {
+                    }
+                }
+                var intYear = strYear.PadRight(4, '9').ToInt();
+                var intMonth = strMonth.ToInt().GetInRangeValue(1, 12).ToIntPossibleMax(gMonthIterator);
+
+                if (intYear.ToDateTime().IsLeapYear() == false)
+                {
+                    gDayIterator.Add(29);
+                }
+                if (intMonth.IsOneOf(new int[] { 4, 6, 9, 11 }))
+                {
+                    gDayIterator.Add(30);
+                }
+                if (intMonth.IsOneOf(new int[] { 1, 3, 5, 7, 8, 10, 12 }))
+                {
+                    gDayIterator.Add(31);
+                }
+                var intDay = strDay.ToInt().GetInRangeValue(1, gDayIterator.Max()).ToIntPossibleMax(gDayIterator);
+                var intHour = strHour.ToInt().GetInRangeValue(1, 23).ToIntPossibleMax(gHourIterator);
+                var intMinute = strMinute.ToInt().GetInRangeValue(0, 59).ToIntPossibleMax(gMinuteIterator);
+                var intSecond = strSecond.ToInt().GetInRangeValue(0, 59).ToIntPossibleMax(gMinuteIterator);
+
+                var endDateTime = new DateTime(intYear, intMonth, intDay, intHour, intMinute, intSecond);
+
+                return endDateTime;
+            }
+            return defaultValue;
         }
 
         public static FileInfo ToFileInfo(this string iFileString)
