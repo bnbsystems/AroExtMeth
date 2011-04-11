@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using AroLibraries.ExtensionMethods.Objects;
 
 namespace AroLibraries.ExtensionMethods
 {
@@ -17,6 +18,7 @@ namespace AroLibraries.ExtensionMethods
             {
                 yield return current;
             }
+            yield return end;
         }
 
         public static IEnumerable<int> IterateFor(this int start, int count)
@@ -69,6 +71,12 @@ namespace AroLibraries.ExtensionMethods
             if (i > 0)
                 return true;
             return false;
+        }
+
+        public static int ToIntPossibleMax(this int iString, IEnumerable<int> possibleNumbers)
+        {
+            return possibleNumbers.Select(x => x.ToString()).Where(x => x.StartsWith(iString.ToString()))
+                .Select(x => x.ToInt(0)).Max();
         }
 
         #endregion ConvertTo

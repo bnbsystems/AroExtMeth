@@ -10,10 +10,30 @@ namespace AroLibraries.ExtensionMethods
             return (value.DayOfWeek == DayOfWeek.Sunday || value.DayOfWeek == DayOfWeek.Saturday);
         }
 
+        public static bool IsLeapYear(this DateTime value)
+        {
+            bool rLeap = false;
+            int year = value.Year;
+            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+            {
+                rLeap = true;
+            }
+            return rLeap;
+        }
+
         public static string ToSimpleDate(this DateTime iDateTime) //TODO: testit
         {
             string rSimpleDate = iDateTime.ToString("yyyyMMdd");
             return rSimpleDate;
+        }
+
+        internal static readonly DateTime gDateTime_JAN_01_1970 = DateTime.SpecifyKind(new DateTime(1970, 1, 1, 0, 0, 0), DateTimeKind.Utc);
+
+        public static long ToSecondsFromEpoch(this DateTime iDateTime)
+        {
+            DateTime dt = iDateTime.ToUniversalTime();
+            TimeSpan ts = dt.Subtract(gDateTime_JAN_01_1970);
+            return (long)ts.TotalSeconds;
         }
 
         #region Iterator

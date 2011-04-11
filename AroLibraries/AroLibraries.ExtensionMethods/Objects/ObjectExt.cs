@@ -24,7 +24,7 @@ namespace AroLibraries.ExtensionMethods.Objects
         public static bool IsBetween<T>(this T me, T lower, T upper)
     where T : IComparable<T>
         {
-            return me.CompareTo(lower) >= 0 && me.CompareTo(upper) < 0;
+            return me.CompareTo(lower) >= 0 && me.CompareTo(upper) <= 0;
         }
 
         public static T GetInRangeValue<T>(this T me, T lower, T upper, T defaultIfLower, T defaultIfUpper)
@@ -72,6 +72,11 @@ namespace AroLibraries.ExtensionMethods.Objects
             {
                 action(iObject);
             }
+        }
+
+        public static int ToInt(this object iObject)
+        {
+            return ToInt(iObject, 0);
         }
 
         public static int ToInt(this object iObject, int iDefaultvalue)
@@ -197,6 +202,18 @@ namespace AroLibraries.ExtensionMethods.Objects
             return iElseString;
         }
 
+        public static string ToStringNull(this object iObject)
+        {
+            if (ReferenceEquals(iObject, null))
+                return "NULL";
+            return iObject.ToString();
+        }
+
+        public static string ToStringLower(this object iobject)
+        {
+            return iobject.ToString().ToLower();
+        }
+
         #endregion Convert TO
 
         #region IS
@@ -211,7 +228,24 @@ namespace AroLibraries.ExtensionMethods.Objects
             return (iObject == null || iObject == DBNull.Value);
         }
 
+        public static bool IsOneOf<T>(this T iObject, IEnumerable<T> enumerable)
+        {
+            return enumerable.Any(x => x.Equals(iObject));
+        }
+
         #endregion IS
+
+        //todo: test it
+        public static IDictionary<string, string> GetPropertiesAndValuesString<T>(this T iObject)
+        {
+            IDictionary<string, string> vPropertiesAndValuesString = new Dictionary<string, string>();
+            foreach (var prop in iObject.GetType().GetProperties())
+            {
+                var value = prop.GetValue(iObject, null).ToString();
+                vPropertiesAndValuesString.Add(prop.Name, value.ToString());
+            }
+            return vPropertiesAndValuesString;
+        }
 
         public static void CloneProperties<T1, T2>(this T1 origin, T2 destination)
         {

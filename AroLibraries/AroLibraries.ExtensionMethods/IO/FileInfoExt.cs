@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace AroLibraries.ExtensionMethods.IO
 {
@@ -28,7 +25,7 @@ namespace AroLibraries.ExtensionMethods.IO
                     return true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
             return false;
