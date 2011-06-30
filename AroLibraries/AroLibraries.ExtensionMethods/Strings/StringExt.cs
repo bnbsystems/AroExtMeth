@@ -37,6 +37,13 @@ namespace AroLibraries.ExtensionMethods.Strings
             return counter;
         }
 
+        public static int CountWords(this string iString)
+        {
+            Regex vRegex = new Regex(@"\w+\w");
+            var vMachedColl = vRegex.Matches(iString);
+            return vMachedColl.Count;
+        }
+
         public static string Reverse(this string s)
         {
             if (s == null) throw new ArgumentNullException("String is NULL");

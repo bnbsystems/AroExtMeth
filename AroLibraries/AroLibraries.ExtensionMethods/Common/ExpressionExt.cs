@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 
-namespace AroLibraries.ExtensionMethods
+namespace AroLibraries.ExtensionMethods.Common
 {
     public static class ExpressionExt
     {
@@ -13,10 +13,12 @@ namespace AroLibraries.ExtensionMethods
         {
             return MemberOf(e.Body);
         }
+
         public static MemberInfo MemberOf(Expression<Action> e)
         {
             return MemberOf(e.Body);
         }
+
         private static MemberInfo MemberOf(Expression body)
         {
             {
@@ -33,11 +35,8 @@ namespace AroLibraries.ExtensionMethods
                 "'" + body + "': not a member access");
         }
 
-
-
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <example>
         ///     Dictionary<string, string> items = Hash(Name => "alex", Age => "10", Height => "20");
