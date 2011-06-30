@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -31,6 +32,25 @@ namespace AroLibraries.ExtensionMethods
         public static string ToBase64(this byte[] iBytes)
         {
             return Convert.ToBase64String(iBytes);
+        }
+
+        public static IEnumerable<Byte> GenerateByteNew()
+        {
+            while (true)
+            {
+                yield return new Byte();
+            }
+        }
+
+        public static IEnumerable<Byte> GenerateByteRandom()
+        {
+            Random vrandom = new Random();
+            while (true)
+            {
+                int number = vrandom.Next(0, 255);
+                byte rByte = (byte)number;
+                yield return rByte;
+            }
         }
 
         public static bool OpenBytesAsFile(this byte[] iBytes, string iExtension)

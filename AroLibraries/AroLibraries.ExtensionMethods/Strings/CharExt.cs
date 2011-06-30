@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace AroLibraries.ExtensionMethods.Strings
 {
@@ -16,6 +14,11 @@ namespace AroLibraries.ExtensionMethods.Strings
                 return true;
             }
             return false;
+        }
+
+        public static Char GetEmpty()
+        {
+            return '\0';
         }
     }
 }

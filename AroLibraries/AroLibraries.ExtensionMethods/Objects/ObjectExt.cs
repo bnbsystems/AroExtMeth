@@ -141,15 +141,22 @@ namespace AroLibraries.ExtensionMethods.Objects
                 return defaultDateTime;
             }
             DateTime rDateTime = defaultDateTime;
-            if (DateTime.TryParse(iObject.ToString(), out rDateTime) == false)
+            try
             {
-                try
+                rDateTime = (DateTime)iObject;
+            }
+            catch (Exception)
+            {
+                if (DateTime.TryParse(iObject.ToString(), out rDateTime) == false)
                 {
-                    rDateTime = Convert.ToDateTime(iObject);
-                }
-                catch
-                {
-                    rDateTime = defaultDateTime;
+                    try
+                    {
+                        rDateTime = Convert.ToDateTime(iObject);
+                    }
+                    catch
+                    {
+                        rDateTime = defaultDateTime;
+                    }
                 }
             }
             return rDateTime;
@@ -171,20 +178,30 @@ namespace AroLibraries.ExtensionMethods.Objects
             {
                 return null;
             }
-            DateTime rDateTime;
-            if (DateTime.TryParse(iObject.ToString(), out rDateTime))
-            {
-                try
-                {
-                    rDateTime = Convert.ToDateTime(iObject);
-                }
-                catch
-                { }
 
-                if (predicate(rDateTime))
+            DateTime rDateTime;
+            try
+            {
+                rDateTime = (DateTime)iObject;
+            }
+            catch (Exception)
+            {
+                if (DateTime.TryParse(iObject.ToString(), out rDateTime) == false)
                 {
-                    return rDateTime;
+                    try
+                    {
+                        rDateTime = Convert.ToDateTime(iObject);
+                    }
+                    catch
+                    {
+                        return null;
+                    }
                 }
+            }
+
+            if (predicate(rDateTime))
+            {
+                return rDateTime;
             }
             return null;
         }

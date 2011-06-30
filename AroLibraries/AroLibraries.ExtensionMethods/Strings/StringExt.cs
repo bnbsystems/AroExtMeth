@@ -79,10 +79,34 @@ namespace AroLibraries.ExtensionMethods.Strings
             return rString;
         }
 
+        public static string Combine(this string iString, string iPathCombineWith)
+        {
+            return Path.Combine(iString, iPathCombineWith);
+        }
+
+        #region Format
+
         public static string FormatWith(this string iString, params object[] iArguments)
         {
             return string.Format(iString, iArguments);
         }
+
+        public static string FormatWith(this string iStirng, object arg0)
+        {
+            return string.Format(iStirng, arg0);
+        }
+
+        public static string FormatWith(this string iStirng, object arg0, object arg1)
+        {
+            return string.Format(iStirng, arg0, arg1);
+        }
+
+        public static string FormatWith(this string iStirng, object arg0, object arg1, object arg2)
+        {
+            return string.Format(iStirng, arg0, arg1, arg2);
+        }
+
+        #endregion Format
 
         #region is
 
@@ -341,6 +365,65 @@ namespace AroLibraries.ExtensionMethods.Strings
             return rPassWdStr;
         }
 
+        public static TEnum ToEnum<TEnum>(this string iString)
+            where TEnum : struct
+        {
+            return (TEnum)Enum.Parse(typeof(TEnum), iString, true);
+        }
+
         #endregion Convert To
+
+        #region Files
+
+        public static bool TryDeleteFile(this string iFileString)
+        {
+            if (File.Exists(iFileString))
+            {
+                try
+                {
+                    File.Delete(iFileString);
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+                return true;
+            }
+            return false;
+        }
+
+        public static bool FileExist(this string iFileString)
+        {
+            if (File.Exists(iFileString))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static byte[] ReadBytes(this string iFileStrim)
+        {
+            return File.ReadAllBytes(iFileStrim);
+        }
+
+        #endregion Files
+
+        public static string Remove(this string iString, char iCharToRemove)
+        {
+            char ichar = CharExt.GetEmpty();
+            return iString.Replace(iCharToRemove, ichar);
+        }
+
+        public static string Remove(this string iString, string iStringToRemove)
+        {
+            return iString.Replace(iStringToRemove, "");
+        }
+
+        public static string SubstringUntil(this string iString, int startIndexing, string iUntilString)
+        {
+            int untilIndex = iString.IndexOf(iUntilString);
+            string vString = iString.Substring(startIndexing, untilIndex);
+            return vString;
+        }
     }
 }
