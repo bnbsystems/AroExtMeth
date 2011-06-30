@@ -15,5 +15,24 @@ namespace AroLibraries.ExtensionMethods
         {
             return source.HasValue && source.Value.Equals(target);
         }
+
+        public static object ToDBValue<T>(this Nullable<T> source)
+                            where T : struct
+        {
+            if (source.HasValue)
+            {
+                return source.Value;
+            }
+            else
+            {
+                return DBNull.Value;
+            }
+        }
+
+        public static T ToValue<T>(this Nullable<T> source)
+                where T : struct
+        {
+            return source.Value;
+        }
     }
 }

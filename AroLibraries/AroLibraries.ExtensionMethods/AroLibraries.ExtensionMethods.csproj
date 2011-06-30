@@ -36,7 +36,11 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
@@ -50,14 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\AssemblyExt.cs" />
     <Compile Include="Common\BooleanExt.cs" />
     <Compile Include="Common\ByteExt.cs" />
+    <Compile Include="Common\DoubleExt.cs" />
     <Compile Include="Common\IComparableExt.cs" />
     <Compile Include="Common\LongExt.cs" />
+    <Compile Include="Common\StopwatchExt.cs" />
     <Compile Include="Console\ConsoleExt.cs" />
     <Compile Include="Common\DateTimeExt.cs" />
     <Compile Include="Common\DecimalExt.cs" />
     <Compile Include="Cryptography\X509Certificate2Ext.cs" />
+    <Compile Include="Data\BinaryExt.cs" />
     <Compile Include="Data\SqlParameterCollectionExt.cs" />
     <Compile Include="DEBUG\DebugIEnumerable.cs" />
     <Compile Include="Drawing\BitmapExt.cs" />
@@ -68,6 +76,7 @@
     <Compile Include="Enumerable\IEnumerableExt.cs" />
     <Compile Include="Common\ExceptionExt.cs" />
     <Compile Include="Common\ExpressionExt.cs" />
+    <Compile Include="Enumerable\IQueryableExt.cs" />
     <Compile Include="Forms\ComboBoxExt.cs" />
     <Compile Include="Forms\DataGridViewExt.cs" />
     <Compile Include="Common\IntExt.cs" />
@@ -86,10 +95,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Strings\CharExt.cs" />
+    <Compile Include="Strings\CookieExt.cs" />
     <Compile Include="Strings\StringBuilderExt.cs" />
     <Compile Include="Strings\StringExt.cs" />
     <Compile Include="Strings\Validator\StringExtValidator.cs" />
     <Compile Include="Tests\ObjectExt.cs" />
+    <Compile Include="Web\CheckBoxExt.cs" />
+    <Compile Include="Web\ControlExt.cs" />
     <Compile Include="Web\DropDownListExt.cs" />
     <Compile Include="Web\HttpSessionStateExt.cs" />
     <Compile Include="XML\XElementExt.cs" />

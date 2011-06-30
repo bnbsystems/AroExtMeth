@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using AroLibraries.ExtensionMethods.Objects;
 
 namespace AroLibraries.ExtensionMethods
@@ -77,6 +75,11 @@ namespace AroLibraries.ExtensionMethods
         {
             return possibleNumbers.Select(x => x.ToString()).Where(x => x.StartsWith(iString.ToString()))
                 .Select(x => x.ToInt(0)).Max();
+        }
+
+        public static string ToHex(this int iInt)
+        {
+            return iInt.ToString("X");
         }
 
         #endregion ConvertTo

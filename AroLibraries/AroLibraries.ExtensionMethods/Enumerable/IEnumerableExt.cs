@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -293,7 +294,7 @@ namespace AroLibraries.ExtensionMethods.Enumerable
             }
         }
 
-        public static IEnumerable<T> Sleep<T>(this IEnumerable<T> source, int millisecondsTimeout)
+        public static IEnumerable<T> SleepForEach<T>(this IEnumerable<T> source, int millisecondsTimeout)
         {
             foreach (T enumerable in source)
             {
@@ -301,6 +302,40 @@ namespace AroLibraries.ExtensionMethods.Enumerable
                 yield return enumerable;
             }
         }
+
+        #region Stopwatch
+
+        public static IList<Stopwatch> ToStopwatch<T>(this IEnumerable<T> source, Action<T> action)
+        {
+            IList<Stopwatch> stopWatches = new List<Stopwatch>();
+
+            foreach (T enumerable in source)
+            {
+                Stopwatch vStopWatch = new Stopwatch();
+                vStopWatch.Start();
+                action(enumerable);
+                vStopWatch.Stop();
+                stopWatches.Add(vStopWatch);
+            }
+            return stopWatches;
+        }
+
+        public static IList<Stopwatch> AddedStopwatch = new List<Stopwatch>();
+
+        public static IEnumerable<T> AddStopwatch<T>(this IEnumerable<T> source)
+        {
+            AddedStopwatch = new List<Stopwatch>();
+            foreach (T item in source)
+            {
+                Stopwatch vStopWatch = new Stopwatch();
+                vStopWatch.Start();
+                yield return item;
+                vStopWatch.Stop();
+                AddedStopwatch.Add(vStopWatch);
+            }
+        }
+
+        #endregion Stopwatch
 
         /// <summary>
         ///
