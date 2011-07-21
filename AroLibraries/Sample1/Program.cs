@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using AroLibraries.ExtensionMethods;
+using AroLibraries.ExtensionMethods.Common;
 using AroLibraries.ExtensionMethods.Enumerable;
+using AroLibraries.ExtensionMethods.IO;
 using AroLibraries.ExtensionMethods.Objects;
 using AroLibraries.ExtensionMethods.Strings;
 using AroLibraries.ExtensionMethods.Strings.Validator;
@@ -14,11 +18,66 @@ namespace Sample1
     {
         static void Main(string[] args)
         {
-            Sample1();
-            Sample2();
-            Sample3();
-            Sample4();
-            Sample5();
+            //Sample1();
+            //Sample2();
+            //Sample3();
+            //Sample4();
+            //Sample5();
+            //Sample6();
+            //Sample7();
+            //Sample8();
+            //Sample9();
+            Sample10();
+        }
+
+        private static void Sample10()
+        {
+            string vPath = @"D:\Programs";
+            DirectoryInfo di = new DirectoryInfo(vPath);
+            var size = di.GetDirectorySize();
+        }
+
+        private static void Sample9()
+        {
+            string words = @"asd qwe zxc q qwe a asd asd"; //6 words
+            var wordsCounter = words.CountWords();
+        }
+
+        private static void Sample8()
+        {
+            using (FileStream fStream = new FileStream("fakse_file.txt", FileMode.Create))
+            {
+                fStream.WriteBytesRandom(11632);
+            }
+        }
+
+        private static int GetEndNumber(string str, IEnumerable<int> ints)
+        {
+            var maxNumber = ints.Select(x => x.ToString()).Where(x => x.StartsWith(str))
+                .Select(x => x.ToInt()).Max();
+
+            return maxNumber;
+        }
+
+        private static void Sample7()
+        {
+            string str = "2011 04 15 18 40 0";
+            var dateTime = str.ToDateTimeEnd();
+        }
+
+        private static void Sample6()
+        {
+            var diskPath = @"D:\";
+            var files = diskPath.ToDirectoryInfo().YieldSame()
+                        .SelectRecursive(x => x.GetDirectories())
+                        .SelectMany(x => x.GetFiles())
+                        .Where(x => x.Length > 1024)
+                        .Select(x => new { Name = x.Name, Len = x.Length })
+                        .OrderBy(x => x.Len).Take(10)
+                        .ToDataTable();
+            if (files != null)
+            {
+            }
         }
 
         private static void Sample2()
@@ -57,7 +116,7 @@ namespace Sample1
             bool p = true;
             bool q = false;
             bool notP = p.Not();
-            int boolResult = p.Ext_ToInt(); //if true return 1 else return 0
+            int boolResult = p.ToInt(); //if true return 1 else return 0
             if (p == true)
             {
                 Console.WriteLine("TRUE");
