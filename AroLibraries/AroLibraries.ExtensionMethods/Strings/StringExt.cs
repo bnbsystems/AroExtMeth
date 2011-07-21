@@ -413,6 +413,11 @@ namespace AroLibraries.ExtensionMethods.Strings
             return File.ReadAllBytes(iFileStrim);
         }
 
+        public static string GetFileName(this string iString)
+        {
+            return Path.GetFileName(iString);
+        }
+
         #endregion Files
 
         public static string Remove(this string iString, char iCharToRemove)
