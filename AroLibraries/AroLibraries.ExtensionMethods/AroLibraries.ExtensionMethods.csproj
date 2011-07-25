@@ -59,6 +59,7 @@
     <Compile Include="Common\ByteExt.cs" />
     <Compile Include="Common\DoubleExt.cs" />
     <Compile Include="Common\IComparableExt.cs" />
+    <Compile Include="Common\IDisposableExt.cs" />
     <Compile Include="Common\LongExt.cs" />
     <Compile Include="Common\StopwatchExt.cs" />
     <Compile Include="Console\ConsoleExt.cs" />

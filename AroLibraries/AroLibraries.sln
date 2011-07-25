@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AroLibraries.ExtensionMetho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AroLibraries.ExtensionMethods.Log4net", "AroLibraries.ExtensionMethods.Log4net\AroLibraries.ExtensionMethods.Log4net.csproj", "{076D0C4A-1863-429B-939C-4675A4B09DCD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AroLibraries.ExtensionMethods.Fun", "AroLibraries.ExtensionMethods.Fun\AroLibraries.ExtensionMethods.Fun.csproj", "{88DD2E4C-B483-4945-A158-E40029E8B1A5}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = AroLibraries.vsmdi
@@ -46,6 +48,10 @@ Global
 		{076D0C4A-1863-429B-939C-4675A4B09DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{076D0C4A-1863-429B-939C-4675A4B09DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{076D0C4A-1863-429B-939C-4675A4B09DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88DD2E4C-B483-4945-A158-E40029E8B1A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DD2E4C-B483-4945-A158-E40029E8B1A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DD2E4C-B483-4945-A158-E40029E8B1A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DD2E4C-B483-4945-A158-E40029E8B1A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

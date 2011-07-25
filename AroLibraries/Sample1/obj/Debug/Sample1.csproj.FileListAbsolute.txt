@@ -12,3 +12,5 @@ D:\priv\Project\aro\AroLibraries\Sample1\bin\Debug\Sample1.exe
 D:\priv\Project\aro\AroLibraries\Sample1\bin\Debug\Sample1.pdb
 D:\priv\Project\aro\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.dll
 D:\priv\Project\aro\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.pdb
+D:\priv\Project\aro\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.Fun.dll
+D:\priv\Project\aro\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.Fun.pdb

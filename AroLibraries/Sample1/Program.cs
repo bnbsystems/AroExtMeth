@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using AroLibraries.ExtensionMethods;
 using AroLibraries.ExtensionMethods.Common;
 using AroLibraries.ExtensionMethods.Enumerable;
+using AroLibraries.ExtensionMethods.Fun;
 using AroLibraries.ExtensionMethods.IO;
 using AroLibraries.ExtensionMethods.Objects;
 using AroLibraries.ExtensionMethods.Strings;
@@ -27,7 +27,27 @@ namespace Sample1
             //Sample7();
             //Sample8();
             //Sample9();
-            Sample10();
+            //Sample10();
+            Sample11();
+        }
+
+        private static void Sample11()
+        {
+            int i = 4;
+            var vSwitch = new Switch<int, int>(i);
+            var r1 = vSwitch.Default();// Case(x => x == 4, () => Console.WriteLine("It's four"));
+            var r2 = vSwitch
+                    .Case(x => x == 4, x => { Console.WriteLine("It's four"); return 4; })
+                    .Default(x => { Console.WriteLine("It isn't four"); return 1; });
+
+            var r3 = vSwitch.New()
+                .Case(3, x => { Console.WriteLine("It's three"); return 3; })
+                .Case(5, x => Console.WriteLine("It's " + x))   // return 5
+                .Default(x => Console.WriteLine("I don't know the value"));
+
+            var r4 = vSwitch
+                    .Case(x => x > 5, x => { Console.WriteLine("Bigger then five"); return 5; })
+                    .Default();
         }
 
         private static void Sample10()
