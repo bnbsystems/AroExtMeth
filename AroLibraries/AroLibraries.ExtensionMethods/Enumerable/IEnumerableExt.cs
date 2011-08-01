@@ -361,6 +361,23 @@ namespace AroLibraries.ExtensionMethods.Enumerable
                 return source;
         }
 
+        public static IEnumerable<TSource> TakeEvery<TSource>(this IEnumerable<TSource> source, int everyNumber)
+        {
+            if (source != null)
+            {
+                int vCounter = 0;
+                foreach (var item in source)
+                {
+                    vCounter++;
+                    if (vCounter == everyNumber)
+                    {
+                        yield return item;
+                        vCounter = 0;
+                    }
+                }
+            }
+        }
+
         public static IOrderedEnumerable<TSource> OrderBy<TSource, TKey>(this IEnumerable<TSource> enumerable, Func<TSource, TKey> keySelector, bool descending)
         {
             if (enumerable == null) { return null; }
