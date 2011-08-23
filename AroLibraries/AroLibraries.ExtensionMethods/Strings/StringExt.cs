@@ -86,6 +86,29 @@ namespace AroLibraries.ExtensionMethods.Strings
             return rString;
         }
 
+        public static string Replace(this string iString, IDictionary<string, string> iDictionary)
+        {
+            if (iString != null)
+            {
+                if (iDictionary != null && iDictionary.Any())
+                {
+                    string tString = iString;
+                    foreach (string key in iDictionary.Keys)
+                    {
+                        string valueDic = "";
+                        bool isOk = iDictionary.TryGetValue(key, out valueDic);
+                        if (isOk)
+                        {
+                            tString = tString.Replace(key, valueDic);
+                        }
+                    }
+                }
+
+                return iString;
+            }
+            throw new ArgumentNullException("Object value is NULL");
+        }
+
         public static string Combine(this string iString, string iPathCombineWith)
         {
             return Path.Combine(iString, iPathCombineWith);
