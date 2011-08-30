@@ -68,6 +68,31 @@ namespace AroLibraries.ExtensionMethods.Strings
             return vList;
         }
 
+        public static int GetVisibleLength(this string iString, bool countEmptyChar)
+        {
+            int rCounter = 0;
+            for (int i = 0; i < iString.Length; i++)
+            {
+                try
+                {
+                    char vChar = iString[i];
+                    if (char.IsLetterOrDigit(vChar) || char.IsSymbol(vChar))
+                    {
+                        rCounter++;
+                    }
+                    else if (char.IsWhiteSpace(vChar) && countEmptyChar && Char.IsControl(vChar) == false)
+                    {
+                        rCounter++;
+                    }
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+
+            return rCounter;
+        }
+
         public static string ReplaceOnce(this string iString, string iOldValue, string iNewValue) //todo: test it
         {
             if (string.IsNullOrEmpty(iString) || string.IsNullOrEmpty(iOldValue)
@@ -452,6 +477,16 @@ namespace AroLibraries.ExtensionMethods.Strings
         public static string Remove(this string iString, string iStringToRemove)
         {
             return iString.Replace(iStringToRemove, "");
+        }
+
+        public static IEnumerable<string> Split(this string iString, char iSeperatorChar)
+        {
+            return iString.Split(new char[] { iSeperatorChar }, StringSplitOptions.None);
+        }
+
+        public static IEnumerable<string> Split(this string iString, char iSeperatorChar, StringSplitOptions iStringSplitOptions)
+        {
+            return iString.Split(new char[] { iSeperatorChar }, iStringSplitOptions);
         }
 
         public static string SubstringUntil(this string iString, int startIndexing, string iUntilString)

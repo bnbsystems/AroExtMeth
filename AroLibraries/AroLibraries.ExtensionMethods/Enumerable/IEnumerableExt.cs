@@ -71,6 +71,18 @@ namespace AroLibraries.ExtensionMethods.Enumerable
 
         #region Generic
 
+        public static IEnumerable<T> AddIteration<T>(this IEnumerable<T> iEnumerable1, IEnumerable<T> iEnumerable2)
+        {
+            foreach (T variable in iEnumerable1)
+            {
+                yield return variable;
+            }
+            foreach (T variable in iEnumerable2)
+            {
+                yield return variable;
+            }
+        }
+
         public static IEnumerable<T> SelectRecursive<T>(this IEnumerable<T> iEnumerator, Func<T, IEnumerable<T>> iSelectManyFunc)
         {
             if (iEnumerator != null)

@@ -29,6 +29,12 @@ namespace AroLibraries.ExtensionMethods
             return rSimpleDate;
         }
 
+        public static DateTime ToSpecifyKind(this DateTime iDateTime, DateTimeKind iDateTimeKind)
+        {
+            return DateTime.SpecifyKind(iDateTime, iDateTimeKind);
+        }
+
+
         internal static readonly DateTime gDateTime_JAN_01_1970 = DateTime.SpecifyKind(new DateTime(1970, 1, 1, 0, 0, 0), DateTimeKind.Utc);
 
         public static DateTime GetDataTimeForEpoch

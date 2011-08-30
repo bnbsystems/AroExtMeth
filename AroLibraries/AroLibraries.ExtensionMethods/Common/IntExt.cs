@@ -19,6 +19,17 @@ namespace AroLibraries.ExtensionMethods
             yield return end;
         }
 
+        public static IEnumerable<int> IterateTo(this int start, int end, int every)
+        {
+            var diffOrder = end - start > 0 ? 1 : -1;
+            var diff = diffOrder * every;
+            for (var current = start; current < diffOrder * end; current += diff)
+            {
+                yield return current;
+            }
+            yield return end;
+        }
+
         public static IEnumerable<int> IterateFor(this int start, int count)
         {
             if (count < 0) yield break;

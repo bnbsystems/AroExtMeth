@@ -93,6 +93,7 @@ namespace AroLibraries.ExtensionMethods.Objects
                 try
                 {
                     rInt = Convert.ToInt32(iObject);
+                    return rInt;
                 }
                 catch (Exception) //FormatException OverflowException
                 {
