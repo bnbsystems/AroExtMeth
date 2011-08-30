@@ -79,7 +79,7 @@ namespace AroLibraries.ExtensionMethods.AForge
             return innerBlobs;
         }
 
-        public static Bitmap ToPixellate(this Bitmap iBitmap, int pixelSize)
+        public static Bitmap ToFilterPixellate(this Bitmap iBitmap, int pixelSize)
         {
             Pixellate filter = new Pixellate(pixelSize);
             return filter.Apply(iBitmap);

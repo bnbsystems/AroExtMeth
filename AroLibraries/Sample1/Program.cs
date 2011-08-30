@@ -29,11 +29,48 @@ namespace Sample1
             //Sample9();
             //Sample10();
             //Sample11();
-            Sample12();
+            //Sample12();
+            Sample13();
+        }
+
+        private static void Sample13()
+        {
+            string str1 = "";
+            int l1 = str1.GetVisibleLength(true);
+            str1 = " ";
+            l1 = str1.GetVisibleLength(false);
+
+            str1 = "             ";
+            l1 = str1.GetVisibleLength(false);
+
+            str1 = " ";
+            l1 = str1.GetVisibleLength(true);
+
+            str1 = "\0 ";
+            l1 = str1.GetVisibleLength(true);
+
+            str1 = " \n";
+            l1 = str1.GetVisibleLength(true);
+
+            str1 = " \r\n";
+            l1 = str1.GetVisibleLength(true);
+
+            str1 = " 1";
+            l1 = str1.GetVisibleLength(true);
+
+            str1 = "A";
+            l1 = str1.GetVisibleLength(true);
+            str1 = "A1";
+            l1 = str1.GetVisibleLength(true);
+
+            str1 = "A1\n";
+            l1 = str1.GetVisibleLength(true);
         }
 
         private static void Sample12()
         {
+            long timeEpoch = DateTime.Now.ToSecondsFromEpoch();
+            string timeEpochStr = timeEpoch.ToString();
         }
 
         private static void Sample11()
