@@ -1,6 +1,0 @@
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods.Automapper\bin\Debug\AroLibraries.ExtensionMethods.Automapper.dll
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods.Automapper\bin\Debug\AroLibraries.ExtensionMethods.Automapper.pdb
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods.Automapper\bin\Debug\AutoMapper.dll
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods.Automapper\obj\Debug\ResolveAssemblyReference.cache
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods.Automapper\obj\Debug\AroLibraries.ExtensionMethods.Automapper.dll
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods.Automapper\obj\Debug\AroLibraries.ExtensionMethods.Automapper.pdb
