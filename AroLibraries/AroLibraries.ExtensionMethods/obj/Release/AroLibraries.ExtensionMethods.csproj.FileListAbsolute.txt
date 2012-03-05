@@ -1,6 +1,0 @@
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\bin\Release\AroLibraries.ExtensionMethods.dll.config
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\bin\Release\AroLibraries.ExtensionMethods.dll
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\bin\Release\AroLibraries.ExtensionMethods.pdb
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\obj\Release\ResolveAssemblyReference.cache
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\obj\Release\AroLibraries.ExtensionMethods.dll
-D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\obj\Release\AroLibraries.ExtensionMethods.pdb
