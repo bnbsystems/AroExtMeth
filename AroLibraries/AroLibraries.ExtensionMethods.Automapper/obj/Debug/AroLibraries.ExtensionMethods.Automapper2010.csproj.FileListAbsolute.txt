@@ -1,0 +1,5 @@
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.Automapper\bin\Debug\AroLibraries.ExtensionMethods.Automapper.dll
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.Automapper\bin\Debug\AroLibraries.ExtensionMethods.Automapper.pdb
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.Automapper\obj\Debug\ResolveAssemblyReference.cache
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.Automapper\obj\Debug\AroLibraries.ExtensionMethods.Automapper.dll
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.Automapper\obj\Debug\AroLibraries.ExtensionMethods.Automapper.pdb

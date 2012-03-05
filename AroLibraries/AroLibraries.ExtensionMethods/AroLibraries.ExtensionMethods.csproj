@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF6F3AA4-DA70-436A-AB8B-060215146BB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AroLibraries.ExtensionMethods</RootNamespace>
+    <AssemblyName>AroLibraries.ExtensionMethods</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AssemblyExt.cs" />
+    <Compile Include="Common\BooleanExt.cs" />
+    <Compile Include="Common\ByteExt.cs" />
+    <Compile Include="Common\DoubleExt.cs" />
+    <Compile Include="Common\IComparableExt.cs" />
+    <Compile Include="Common\IDisposableExt.cs" />
+    <Compile Include="Common\LongExt.cs" />
+    <Compile Include="Common\StopwatchExt.cs" />
+    <Compile Include="Common\TypeExt.cs" />
+    <Compile Include="Console\ConsoleExt.cs" />
+    <Compile Include="Common\DateTimeExt.cs" />
+    <Compile Include="Common\DecimalExt.cs" />
+    <Compile Include="Cryptography\X509Certificate2Ext.cs" />
+    <Compile Include="Data\BinaryExt.cs" />
+    <Compile Include="Data\SqlParameterCollectionExt.cs" />
+    <Compile Include="DEBUG\DebugIEnumerable.cs" />
+    <Compile Include="Drawing\BitmapExt.cs" />
+    <Compile Include="Drawing\ColorExt.cs" />
+    <Compile Include="Drawing\ImageFormatExt.cs" />
+    <Compile Include="Drawing\PointExt.cs" />
+    <Compile Include="Drawing\RectangleExt.cs" />
+    <Compile Include="Drawing\SizeExt.cs" />
+    <Compile Include="Enumerable\ArrayExt.cs" />
+    <Compile Include="Enumerable\ArrayListExt.cs" />
+    <Compile Include="Enumerable\IDictionaryExt.cs" />
+    <Compile Include="Enumerable\IEnumerableExt.cs" />
+    <Compile Include="Common\ExceptionExt.cs" />
+    <Compile Include="Common\ExpressionExt.cs" />
+    <Compile Include="Enumerable\IListExt.cs" />
+    <Compile Include="Enumerable\ILookupExt.cs" />
+    <Compile Include="Forms\ComboBoxExt.cs" />
+    <Compile Include="Forms\DataGridViewExt.cs" />
+    <Compile Include="Common\IntExt.cs" />
+    <Compile Include="Common\NullableExt.cs" />
+    <Compile Include="Forms\TextBoxExt.cs.cs" />
+    <Compile Include="IO\DirectoryInfoExt.cs" />
+    <Compile Include="IO\FileInfoExt.cs" />
+    <Compile Include="IO\FileStreamExt.cs" />
+    <Compile Include="IO\FileSystemInfoExt.cs" />
+    <Compile Include="IO\StreamExt.cs" />
+    <Compile Include="IO\TextWriterExt.cs" />
+    <Compile Include="Objects\ObjectExt.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\CharExt.cs" />
+    <Compile Include="Strings\CookieExt.cs" />
+    <Compile Include="Strings\StringBuilderExt.cs" />
+    <Compile Include="Strings\StringExt.cs" />
+    <Compile Include="Strings\Validator\StringExtValidator.cs" />
+    <Compile Include="Web\CheckBoxExt.cs" />
+    <Compile Include="Web\ControlExt.cs" />
+    <Compile Include="Web\DropDownListExt.cs" />
+    <Compile Include="Web\HttpSessionStateExt.cs" />
+    <Compile Include="Web\TemplateControlExt.cs" />
+    <Compile Include="Web\UriExt.cs" />
+    <Compile Include="XML\XElementExt.cs" />
+    <Compile Include="XML\XmlNodeExt.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Changed.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Notes="&lt;Notes Project=&quot;ff6f3aa4-da70-436a-ab8b-060215146bb2&quot; xmlns=&quot;clr-namespace:StickyNotes.Model;assembly=StickyNotes&quot;&gt;&lt;Notes.StickyNotes&gt;&lt;Note FilePath=&quot;&quot; Content=&quot;&quot; Date=&quot;2011-08-13T20:56:39.4091797+02:00&quot; /&gt;&lt;/Notes.StickyNotes&gt;&lt;/Notes&gt;" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
