@@ -1,0 +1,10 @@
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.AForge\bin\Debug\AroLibraries.ExtensionMethods.AForge.dll
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.AForge\bin\Debug\AroLibraries.ExtensionMethods.AForge.pdb
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.AForge\bin\Debug\AForge.Math.dll
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.AForge\bin\Debug\AForge.xml
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.AForge\bin\Debug\AForge.Imaging.xml
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.AForge\bin\Debug\AForge.Imaging.Formats.xml
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.AForge\bin\Debug\AForge.Math.xml
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.AForge\obj\Debug\ResolveAssemblyReference.cache
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.AForge\obj\Debug\AroLibraries.ExtensionMethods.AForge.dll
+C:\4vm\Projects\arolibrary\AroLibraries\AroLibraries.ExtensionMethods.AForge\obj\Debug\AroLibraries.ExtensionMethods.AForge.pdb

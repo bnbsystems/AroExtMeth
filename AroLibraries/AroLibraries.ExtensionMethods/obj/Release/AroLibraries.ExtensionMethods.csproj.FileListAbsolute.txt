@@ -1,0 +1,12 @@
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\bin\Release\AroLibraries.ExtensionMethods.dll.config
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\bin\Release\AroLibraries.ExtensionMethods.dll
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\bin\Release\AroLibraries.ExtensionMethods.pdb
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\obj\Release\ResolveAssemblyReference.cache
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\obj\Release\AroLibraries.ExtensionMethods.dll
+D:\priv\Project\aro\AroLibraries\AroLibraries.ExtensionMethods\obj\Release\AroLibraries.ExtensionMethods.pdb
+C:\Users\aro\Documents\My Dropbox0\My Dropbox\mgr\copy\before\code_old\Webcam_learn1\AroLibraries.ExtensionMethods\bin\Release\AroLibraries.ExtensionMethods.dll.config
+C:\Users\aro\Documents\My Dropbox0\My Dropbox\mgr\copy\before\code_old\Webcam_learn1\AroLibraries.ExtensionMethods\bin\Release\AroLibraries.ExtensionMethods.dll
+C:\Users\aro\Documents\My Dropbox0\My Dropbox\mgr\copy\before\code_old\Webcam_learn1\AroLibraries.ExtensionMethods\bin\Release\AroLibraries.ExtensionMethods.pdb
+C:\Users\aro\Documents\My Dropbox0\My Dropbox\mgr\copy\before\code_old\Webcam_learn1\AroLibraries.ExtensionMethods\obj\Release\ResolveAssemblyReference.cache
+C:\Users\aro\Documents\My Dropbox0\My Dropbox\mgr\copy\before\code_old\Webcam_learn1\AroLibraries.ExtensionMethods\obj\Release\AroLibraries.ExtensionMethods.dll
+C:\Users\aro\Documents\My Dropbox0\My Dropbox\mgr\copy\before\code_old\Webcam_learn1\AroLibraries.ExtensionMethods\obj\Release\AroLibraries.ExtensionMethods.pdb

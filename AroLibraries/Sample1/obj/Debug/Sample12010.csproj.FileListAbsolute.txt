@@ -1,0 +1,9 @@
+C:\4vm\Projects\arolibrary\AroLibraries\Sample1\obj\Debug\ResolveAssemblyReference.cache
+C:\4vm\Projects\arolibrary\AroLibraries\Sample1\obj\Debug\Sample1.exe
+C:\4vm\Projects\arolibrary\AroLibraries\Sample1\bin\Debug\Sample1.exe
+C:\4vm\Projects\arolibrary\AroLibraries\Sample1\bin\Debug\Sample1.pdb
+C:\4vm\Projects\arolibrary\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.dll
+C:\4vm\Projects\arolibrary\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.Fun.dll
+C:\4vm\Projects\arolibrary\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.Fun.pdb
+C:\4vm\Projects\arolibrary\AroLibraries\Sample1\bin\Debug\AroLibraries.ExtensionMethods.pdb
+C:\4vm\Projects\arolibrary\AroLibraries\Sample1\obj\Debug\Sample1.pdb
