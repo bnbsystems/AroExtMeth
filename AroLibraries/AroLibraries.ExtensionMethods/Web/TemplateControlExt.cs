@@ -7,7 +7,7 @@ using System.Web;
 
 namespace AroLibraries.ExtensionMethods.Web
 {
-    public class TemplateControlExt
+    public static class TemplateControlExt
     {
 
         public static string GetAspxFilename(this  TemplateControl iTemplateControl)

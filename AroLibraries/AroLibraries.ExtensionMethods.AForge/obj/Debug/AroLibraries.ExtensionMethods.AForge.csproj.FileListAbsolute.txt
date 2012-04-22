@@ -17,3 +17,6 @@ C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.AForg
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.AForge\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.AForge\obj\Debug\AroLibraries.ExtensionMethods.AForge.dll
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.AForge\obj\Debug\AroLibraries.ExtensionMethods.AForge.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.AForge\obj\Debug\AroLibraries.ExtensionMethods.AForge.dll
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.AForge\obj\Debug\AroLibraries.ExtensionMethods.AForge.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.AForge\obj\Debug\AroLibraries.ExtensionMethods.AForge.csprojResolveAssemblyReference.cache

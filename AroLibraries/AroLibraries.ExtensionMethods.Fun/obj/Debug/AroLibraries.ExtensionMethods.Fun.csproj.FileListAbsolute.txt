@@ -8,3 +8,7 @@ C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Fun\b
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Fun\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Fun\obj\Debug\AroLibraries.ExtensionMethods.Fun.dll
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Fun\obj\Debug\AroLibraries.ExtensionMethods.Fun.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Fun\obj\Debug\AroLibraries.ExtensionMethods.Fun.dll
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Fun\obj\Debug\AroLibraries.ExtensionMethods.Fun.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Fun\bin\Debug\AroLibraries.ExtensionMethods.Fun.dll
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Fun\bin\Debug\AroLibraries.ExtensionMethods.Fun.pdb

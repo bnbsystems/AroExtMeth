@@ -48,3 +48,11 @@ C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods\bin\D
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.dll
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.pdb
+G:\VM_Shared\Projects\AroLibraries\arolibraries\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.csprojResolveAssemblyReference.cache
+G:\VM_Shared\Projects\AroLibraries\arolibraries\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.dll
+G:\VM_Shared\Projects\AroLibraries\arolibraries\AroLibraries\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.dll
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods\obj\Debug\AroLibraries.ExtensionMethods.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods\bin\Debug\AroLibraries.ExtensionMethods.dll.config
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods\bin\Debug\AroLibraries.ExtensionMethods.dll
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods\bin\Debug\AroLibraries.ExtensionMethods.pdb

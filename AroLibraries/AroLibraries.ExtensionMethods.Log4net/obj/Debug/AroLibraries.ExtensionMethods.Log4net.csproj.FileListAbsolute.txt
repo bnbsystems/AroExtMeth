@@ -5,3 +5,9 @@ C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Log4n
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Log4net\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Log4net\obj\Debug\AroLibraries.ExtensionMethods.Log4net.dll
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Log4net\obj\Debug\AroLibraries.ExtensionMethods.Log4net.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Log4net\obj\Debug\AroLibraries.ExtensionMethods.Log4net.dll
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Log4net\obj\Debug\AroLibraries.ExtensionMethods.Log4net.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Log4net\bin\Debug\AroLibraries.ExtensionMethods.Log4net.dll
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Log4net\bin\Debug\AroLibraries.ExtensionMethods.Log4net.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Log4net\bin\Debug\log4net.dll
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Log4net\bin\Debug\log4net.xml

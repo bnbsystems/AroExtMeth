@@ -9,3 +9,6 @@ C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Autom
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Automapper\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Automapper\obj\Debug\AroLibraries.ExtensionMethods.Automapper.dll
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.Automapper\obj\Debug\AroLibraries.ExtensionMethods.Automapper.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Automapper\obj\Debug\AroLibraries.ExtensionMethods.Automapper.dll
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Automapper\obj\Debug\AroLibraries.ExtensionMethods.Automapper.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.Automapper\obj\Debug\AroLibraries.ExtensionMethods.Automapper.csprojResolveAssemblyReference.cache
