@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id>AroLibraries</id>
+    <version>1.0.1</version>
+    <authors>Arkadiusz Beer</authors>
+    <description>Contains a lot of extension methods</description>
+    <language>en-US</language>
+    <projectUrl>http://arolibraries.codeplex.com/</projectUrl>
+    <tags>ext extension methods aro </tags>
+    <iconUrl>AroLibrariesSmal.png</iconUrl>
+  </metadata>
+    <files>
+      <file src="bin\Debug\*.dll" target="lib" />
+      <file src="bin\Debug\*.pdb" target="lib" /> 
+    </files>
+</package>
