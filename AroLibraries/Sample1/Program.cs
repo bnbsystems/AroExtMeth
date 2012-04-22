@@ -10,6 +10,7 @@ using AroLibraries.ExtensionMethods.IO;
 using AroLibraries.ExtensionMethods.Objects;
 using AroLibraries.ExtensionMethods.Strings;
 using AroLibraries.ExtensionMethods.Strings.Validator;
+using System.Web.UI.WebControls;
 
 
 namespace Sample1
@@ -40,6 +41,9 @@ namespace Sample1
         {
             IEnumerable<char> str = new char[]{'a','b','c'};
            var abcPermutation= str.GenerateOrderPossibilities();
+
+
+           
 
            System.Diagnostics.Debugger.Break();
             

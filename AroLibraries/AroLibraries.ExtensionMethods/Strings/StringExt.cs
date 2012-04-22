@@ -93,6 +93,7 @@ namespace AroLibraries.ExtensionMethods.Strings
                 }
                 catch (Exception ex)
                 {
+
                 }
             }
 

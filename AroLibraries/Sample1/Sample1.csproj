@@ -81,14 +81,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AroLibraries.ExtensionMethods.AForge\AroLibraries.ExtensionMethods.AForge.csproj">
-      <Project>{13AC4F76-D7E8-4F90-8B4E-E7ED11E0F5CF}</Project>
-      <Name>AroLibraries.ExtensionMethods.AForge</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AroLibraries.ExtensionMethods.Automapper\AroLibraries.ExtensionMethods.Automapper.csproj">
-      <Project>{EDB3EF31-27A6-4D40-B918-5C9C37C21492}</Project>
-      <Name>AroLibraries.ExtensionMethods.Automapper</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AroLibraries.ExtensionMethods.Fun\AroLibraries.ExtensionMethods.Fun.csproj">
       <Project>{88DD2E4C-B483-4945-A158-E40029E8B1A5}</Project>
       <Name>AroLibraries.ExtensionMethods.Fun</Name>

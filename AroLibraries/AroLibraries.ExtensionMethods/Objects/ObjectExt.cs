@@ -276,7 +276,11 @@ namespace AroLibraries.ExtensionMethods.Objects
             IDictionary<string, string> vPropertiesAndValuesString = new Dictionary<string, string>();
             foreach (var prop in iObject.GetType().GetProperties())
             {
-                var value = prop.GetValue(iObject, null).ToString();
+                var value = prop.GetValue(iObject, null);
+                if (value == null)
+                {
+                    value = "NULL";
+                }
                 vPropertiesAndValuesString.Add(prop.Name, value.ToString());
             }
             return vPropertiesAndValuesString;

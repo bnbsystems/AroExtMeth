@@ -3,3 +3,7 @@ C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.NET40
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.NET40\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.NET40\obj\Debug\AroLibraries.ExtensionMethods.NET40.dll
 C:\Users\arekbee\Desktop\aroLib\AroLibraries\AroLibraries.ExtensionMethods.NET40\obj\Debug\AroLibraries.ExtensionMethods.NET40.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.NET40\bin\Debug\AroLibraries.ExtensionMethods.NET40.dll
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.NET40\bin\Debug\AroLibraries.ExtensionMethods.NET40.pdb
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.NET40\obj\Debug\AroLibraries.ExtensionMethods.NET40.dll
+C:\Users\arekbee\Desktop\arolib\AroLibraries_vm\AroLibraries.ExtensionMethods.NET40\obj\Debug\AroLibraries.ExtensionMethods.NET40.pdb
